@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Model\Reply;
 use Illuminate\Http\Request;
+use App\Model\Question;
+use Symfony\Component\HttpFoundation\Response;
+use  App\Http\Resources\ReplyResource;
+ 
 
 class ReplyController extends Controller
 {
@@ -12,9 +16,11 @@ class ReplyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Question $question)
+    {   
+       
+         return ReplyResource::collection($question->replies);
+        // return $question->replies;
     }
 
     /**
@@ -33,9 +39,10 @@ class ReplyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Question $question,Request $request)
     {
-        //
+        $question->replies()->create($request->all());
+        
     }
 
     /**
@@ -44,9 +51,9 @@ class ReplyController extends Controller
      * @param  \App\Model\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function show(Reply $reply)
+    public function show(Question $question , Reply $reply)
     {
-        //
+        return new ReplyResource($reply);
     }
 
     /**
@@ -69,7 +76,7 @@ class ReplyController extends Controller
      */
     public function update(Request $request, Reply $reply)
     {
-        //
+        $reply->update($request->all());
     }
 
     /**
@@ -78,8 +85,8 @@ class ReplyController extends Controller
      * @param  \App\Model\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Question $question,Reply $reply)
     {
-        //
+        $reply->delete();
     }
 }
