@@ -4,10 +4,10 @@
     <v-toolbar-title>STARKS</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Forum</v-btn>
-      <v-btn flat>Ask Question</v-btn>
-      <v-btn flat>Category</v-btn>
-      <v-btn flat>Login</v-btn>
+      <router-link to="/login" tag="v-btn" class="v-btn--flat">Forum</router-link>
+      <router-link to="/login" tag="v-btn" class="v-btn--flat">Ask Question</router-link>
+      <router-link to="/login" tag="v-btn" class="v-btn--flat">Category</router-link>    
+     <router-link to="/login" tag="v-btn" class="v-btn--flat">Login</router-link>
     </v-toolbar-items>
   </v-toolbar>
 </template>
