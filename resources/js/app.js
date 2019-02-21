@@ -16,6 +16,11 @@ import router from './Router/router'
 
 
 Vue.use(Vuetify)
+import User from './Helpers/User'
+window.User = User;
+
+
+
 
 
 /**

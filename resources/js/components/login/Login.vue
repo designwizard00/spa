@@ -3,7 +3,7 @@
     <div>
 
         <template>
-  <v-form v-model="valid">
+  <v-form @submit.prevent="login">
         
     <v-container>
       <v-layout>
@@ -12,8 +12,8 @@
           xs12
           md4
         >
-          <v-text-field
-            v-model="email"
+          <v-text-field v-model="form.email"
+           
             label="E-mail"
             type="email"
             required
@@ -24,8 +24,8 @@
           xs12
           md4
         >
-          <v-text-field
-            v-model="lastname"
+          <v-text-field v-model="form.password"
+          
             label="Enter Password"
             type="password"
             required
@@ -59,6 +59,9 @@
 </template>
 
 <script>
+
+
+
 export default {
    
  data() {
@@ -69,6 +72,13 @@ export default {
          }
 
      }
+ },
+ methods: {
+
+   login(){
+     User.login(this.form);
+   }
+   
  }
 
 }
