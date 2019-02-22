@@ -2,7 +2,7 @@
     
     <div>
 
-        <template>
+        
   <v-form @submit.prevent="login">
         
     <v-container>
@@ -41,11 +41,14 @@
       </v-layout>
 
          <v-btn color="green" dark type="submit" style="margin-left:0px;">Login</v-btn>
-      
+         <router-link to="/signup" tag="button" class="v-btn theme--dark orange">
+         Signu Up
+         </router-link>
+         
     </v-container>
     
   </v-form>
-</template>
+
   
 
 

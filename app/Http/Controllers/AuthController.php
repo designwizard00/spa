@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Tymon\Facades\JWTAuth;
+use App\Http\Requests\SignupRequest;
 
 class AuthController extends Controller
 {
@@ -34,7 +35,7 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
-    public function signup(Request $request) {
+    public function signup(SignupRequest $request) {
         
         User::create($request->all());
         return $this->login($request);
