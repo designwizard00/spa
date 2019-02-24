@@ -9,11 +9,13 @@
       required
     ></v-text-field>
     <span class="red--text"></span>
+    <span class="red--text" v-if="errors.name">{{ errors.name[0] }}</span>
 
     <v-text-field v-model="form.email"     
       label="email"
       required
     ></v-text-field>
+    <span class="red--text" v-if="errors.email">{{ errors.email[0] }}</span>
 
       <v-text-field
       v-model="form.password" 
@@ -21,6 +23,7 @@
       label="password"
       required
     ></v-text-field>
+    <span class="red--text" v-if="errors.password">{{ errors.password[0] }}</span>
 
      <v-text-field v-model="form.passwrd_confirmation" 
       type="password"    

@@ -1995,6 +1995,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37347,6 +37350,12 @@ var render = function() {
               _vm._v(" "),
               _c("span", { staticClass: "red--text" }),
               _vm._v(" "),
+              _vm.errors.name
+                ? _c("span", { staticClass: "red--text" }, [
+                    _vm._v(_vm._s(_vm.errors.name[0]))
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
               _c("v-text-field", {
                 attrs: { label: "email", required: "" },
                 model: {
@@ -37358,6 +37367,12 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
+              _vm.errors.email
+                ? _c("span", { staticClass: "red--text" }, [
+                    _vm._v(_vm._s(_vm.errors.email[0]))
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
               _c("v-text-field", {
                 attrs: { type: "password", label: "password", required: "" },
                 model: {
@@ -37368,6 +37383,12 @@ var render = function() {
                   expression: "form.password"
                 }
               }),
+              _vm._v(" "),
+              _vm.errors.password
+                ? _c("span", { staticClass: "red--text" }, [
+                    _vm._v(_vm._s(_vm.errors.password[0]))
+                  ])
+                : _vm._e(),
               _vm._v(" "),
               _c("v-text-field", {
                 attrs: { type: "password", label: "password", required: "" },
@@ -78689,8 +78710,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\mister.robot\Desktop\VU\test3\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\mister.robot\Desktop\VU\test3\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\jerry.drake\Desktop\SpaApp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\jerry.drake\Desktop\SpaApp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
